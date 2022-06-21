@@ -32,7 +32,7 @@ pipeline {
             steps {
                 script {
                     try {
-                        currentBuild.result = "UNSTABLE"
+                        sh 'echo Roney'
                     }catch (err) {
                         echo err.getMessage()
                     } 
@@ -73,17 +73,7 @@ pipeline {
                     colorCode = '#FF0000'
                 }
 
-                try {
-                // slackSend(channel: "notificacoes", message: "Teste @joseroneysilvasantos", sendAsText: true)
-                // slackSend (color: 'good', message: "The pipeline ${currentBuild.fullDisplayName} completed successfully.")
                 slackSend (color: colorCode, message: summary)
-                }
-                catch(err) {
-                    echo err.getMessage()
-                }
-                // finally{
-                //     slackSend ( message: "${currentBuild.result}" )
-                // }  
             }
          }
     }
