@@ -38,15 +38,11 @@ pipeline {
         always {
             script {
 
-                // try {
-                //     slackSend(channel: "notificacoes", message: "Teste @joseroneysilvasantos", sendAsText: true)
-                // }catch(err) {
-                //     echo err.getMessage()
-                // }
-
-                success {
-                    echo 'I succeeded!'
+                try {
+                    // slackSend(channel: "notificacoes", message: "Teste @joseroneysilvasantos", sendAsText: true)
                     slackSend (color: 'good', message: "The pipeline ${currentBuild.fullDisplayName} completed successfully.")
+                }catch(err) {
+                    echo err.getMessage()
                 }
 
                 // def notifyBuild(String buildStatus = 'STARTED') {
