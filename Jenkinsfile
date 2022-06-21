@@ -57,8 +57,8 @@ pipeline {
 
                 try {
                 // slackSend(channel: "notificacoes", message: "Teste @joseroneysilvasantos", sendAsText: true)
-                slackSend (color: 'good', message: "The pipeline ${currentBuild.fullDisplayName} completed successfully.")
-                // slackSend (color: colorCode, message: summary)
+                // slackSend (color: 'good', message: "The pipeline ${currentBuild.fullDisplayName} completed successfully.")
+                slackSend (color: colorCode, message: summary)
                 }
                 catch(err) {
                     echo err.getMessage()
