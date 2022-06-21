@@ -1,3 +1,4 @@
+#!groovy
 // Jenkinsfile (Declarative Pipeline)
 DOCKER_IMAGE = 'hub.docker.com/_/nginx'
 pipeline {
