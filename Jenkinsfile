@@ -32,7 +32,7 @@ pipeline {
             steps {
                 script {
                     try {
-                        sh 'lroneyas -l'
+                        h 'lroneyas -l'
                     }catch (err) {
                         echo err.getMessage()
                     } 
