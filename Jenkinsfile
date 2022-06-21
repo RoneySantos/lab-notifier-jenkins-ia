@@ -33,6 +33,7 @@ pipeline {
                 script {
                     try {
                         sh 'slep 10'
+                        sh 'exit 1'
                     }catch (err) {
                         echo err.getMessage()
                     } 
@@ -57,7 +58,6 @@ pipeline {
             script {
 
                 def summary = "The pipeline ${currentBuild.fullDisplayName} completed with status ${currentBuild.result}."
-                def currentBuild.result = "UNSTABLE"
 
                 // Override default values based on build status
                 if (currentBuild.result == 'UNSTABLE') {
