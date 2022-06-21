@@ -12,25 +12,37 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh '''
-                cat /etc/os-release
-                echo Building
-                '''
+                script {
+                    try {
+                        sh '''
+                        cat /etc/os-release
+                        echo Building
+                        '''
 
-                sh '''
-                echo Segunda parte do step Build
-                '''
+                        sh '''
+                        echo Segunda parte do step Build
+                        '''
+                    }
+                }
             }
         }
         stage('Test') {
             steps {
-                sh 'las -la'             
+                script {
+                    try {
+                        sh 'las -la'
+                    }
+                }
             }
         }
         stage('Deploy') {
             steps {
-                sh 'ls -la'
-                echo 'Deploying....'
+                script {
+                    try {
+                        sh 'ls -la'
+                        echo 'Deploying....'
+                    }
+                }
             }
         }
     }
