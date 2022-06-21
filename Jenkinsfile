@@ -65,7 +65,7 @@ pipeline {
                 if (currentBuild.result == 'STARTED') {
                     color = 'YELLOW'
                     colorCode = '#FFFF00'
-                } else if (currentBuild.result == 'SUCCESSFUL') {
+                } else if (currentBuild.result == 'SUCCESS') {
                     color = 'GREEN'
                     colorCode = '#00FF00'
                 } else {
