@@ -45,7 +45,7 @@ pipeline {
                     echo err.getMessage()
                 }
                 finally{
-                    slackSend ( message "${currentBuild.result}" )
+                    slackSend ( message: "${currentBuild.result}" )
                 }
 
                 // def notifyBuild(String buildStatus = 'STARTED') {
