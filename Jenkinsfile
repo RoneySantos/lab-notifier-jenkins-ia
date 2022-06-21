@@ -55,17 +55,17 @@ pipeline {
     post{
         always {
             script {
-                // Default values to Build status
-                // def colorName = 'RED'
-                // def colorCode = '#FF0000'
-                // def subject = "${buildStatus}: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'"
+
                 def summary = "The pipeline ${currentBuild.fullDisplayName} completed successfully."
 
                 // Override default values based on build status
-                if (currentBuild.result == 'STARTED') {
+                if (currentBuild.result == 'UNSTABLE') {
                     color = 'YELLOW'
                     colorCode = '#FFFF00'
-                } else if (currentBuild.result == 'SUCCESS') {
+                } else if (currentBuild.result == 'ABORTED') {
+                    color = 'YELLOW'
+                    colorCode = '#FFFF00'
+                }else if (currentBuild.result == 'SUCCESS') {
                     color = 'GREEN'
                     colorCode = '#00FF00'
                 } else {
