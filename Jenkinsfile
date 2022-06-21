@@ -48,8 +48,10 @@ pipeline {
                 //     slackSend ( message: "${currentBuild.result}" )
                 // }
 
-                def notifyBuild(currentBuild.result)
-
+                try {
+                    notifyBuild(currentBuild.result)
+                }
+                
                 def notifyBuild(String buildStatus = 'STARTED') {
                 // build status of null means successful
                 buildStatus =  buildStatus ?: 'SUCCESSFUL'
