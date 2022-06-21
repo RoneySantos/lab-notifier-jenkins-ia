@@ -24,12 +24,12 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sh 'ls -la'             
+                sh 'las -la'             
             }
         }
         stage('Deploy') {
             steps {
-                sh 'las -la'
+                sh 'ls -la'
                 echo 'Deploying....'
             }
         }
@@ -41,7 +41,7 @@ pipeline {
                 // def colorName = 'RED'
                 // def colorCode = '#FF0000'
                 // def subject = "${buildStatus}: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'"
-                // def summary = "${subject} (${env.BUILD_URL})"
+                def summary = "The pipeline ${currentBuild.fullDisplayName} completed successfully."
 
                 // Override default values based on build status
                 if (currentBuild.result == 'STARTED') {
