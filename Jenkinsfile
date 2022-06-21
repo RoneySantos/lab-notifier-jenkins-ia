@@ -36,7 +36,9 @@ pipeline {
     post{
         always {
             // slackSend(channel: "notificacoes", message: "Teste @joseroneysilvasantos", sendAsText: true)
+            try {
             notifyBuild(currentBuild.result)
+            }
 
             def notifyBuild(String buildStatus = 'STARTED') {
             // build status of null means successful
