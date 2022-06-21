@@ -32,7 +32,7 @@ pipeline {
             steps {
                 script {
                     try {
-                        h 'lroneyas -l'
+                        currentBuild.result = "UNSTABLE"
                     }catch (err) {
                         echo err.getMessage()
                     } 
