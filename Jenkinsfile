@@ -22,7 +22,9 @@ pipeline {
                         sh '''
                         echo Segunda parte do step Build
                         '''
-                    }
+                    }catch (err) {
+                        echo err.getMessage()
+                    } 
                 }
             }
         }
@@ -31,7 +33,9 @@ pipeline {
                 script {
                     try {
                         sh 'las -la'
-                    }
+                    }catch (err) {
+                        echo err.getMessage()
+                    } 
                 }
             }
         }
@@ -41,7 +45,9 @@ pipeline {
                     try {
                         sh 'ls -la'
                         echo 'Deploying....'
-                    }
+                    }catch (err) {
+                        echo err.getMessage()
+                    } 
                 }
             }
         }
