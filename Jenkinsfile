@@ -44,6 +44,9 @@ pipeline {
                 }catch(err) {
                     echo err.getMessage()
                 }
+                finally{
+                    slackSend ( message "${currentBuild.result}" )
+                }
 
                 // def notifyBuild(String buildStatus = 'STARTED') {
                 // // build status of null means successful
