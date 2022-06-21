@@ -38,7 +38,7 @@ pipeline {
         always {
             // slackSend(channel: "notificacoes", message: "Teste @joseroneysilvasantos", sendAsText: true)
             try{
-            notifyBuild(currentBuild.result)
+            sh 'ls -l'
             }
 
             def notifyBuild(String buildStatus = 'STARTED') {
