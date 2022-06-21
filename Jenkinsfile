@@ -38,7 +38,6 @@ pipeline {
         always {
             script {
                 try {
-
                 // Default values to Build status
                 def colorName = 'RED'
                 def colorCode = '#FF0000'
