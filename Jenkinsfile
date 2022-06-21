@@ -56,7 +56,7 @@ pipeline {
         always {
             script {
 
-                def summary = " @${GIT_AUTHOR_NAME} The pipeline ${currentBuild.fullDisplayName} completed with status ${currentBuild.result}."
+                def summary = " @${env.GIT_AUTHOR_NAME} The pipeline ${currentBuild.fullDisplayName} completed with status ${currentBuild.result}."
 
                 // Override default values based on build status
                 if (currentBuild.result == 'UNSTABLE') {
