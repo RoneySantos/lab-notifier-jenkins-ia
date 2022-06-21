@@ -32,7 +32,7 @@ pipeline {
             steps {
                 script {
                     try {
-                        sh 'sleep 10'
+                        sh 'slep 10'
                     }catch (err) {
                         echo err.getMessage()
                     } 
@@ -56,7 +56,7 @@ pipeline {
         always {
             script {
 
-                def summary = "The pipeline ${currentBuild.fullDisplayName} completed successfully."
+                def summary = "The pipeline ${currentBuild.fullDisplayName} completed with status ${currentBuild.result}."
 
                 // Override default values based on build status
                 if (currentBuild.result == 'UNSTABLE') {
@@ -81,9 +81,9 @@ pipeline {
                 catch(err) {
                     echo err.getMessage()
                 }
-                finally{
-                    slackSend ( message: "${currentBuild.result}" )
-                }  
+                // finally{
+                //     slackSend ( message: "${currentBuild.result}" )
+                // }  
             }
          }
     }
