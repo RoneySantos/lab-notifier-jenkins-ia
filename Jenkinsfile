@@ -37,13 +37,12 @@ pipeline {
     post{
         always {
             script {
-                try {
                 // Default values to Build status
-                // def colorName = 'RED'
-                // def colorCode = '#FF0000'
-                // def subject = "${buildStatus}: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'"
-                // def summary = "${subject} (${env.BUILD_URL})"
-
+                def colorName = 'RED'
+                def colorCode = '#FF0000'
+                def subject = "${buildStatus}: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'"
+                def summary = "${subject} (${env.BUILD_URL})"
+                try {
                 // slackSend(channel: "notificacoes", message: "Teste @joseroneysilvasantos", sendAsText: true)
                 slackSend (color: 'good', message: "The pipeline ${currentBuild.fullDisplayName} completed successfully.")
                 }
