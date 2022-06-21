@@ -33,7 +33,7 @@ pipeline {
                 script {
                     try {
                         sh 'slep 10'
-                        sh 'exit 1'
+                        currentBuild.result = "UNSTABLE"
                     }catch (err) {
                         echo err.getMessage()
                     } 
