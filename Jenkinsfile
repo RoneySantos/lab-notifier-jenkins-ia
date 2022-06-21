@@ -32,7 +32,7 @@ pipeline {
             steps {
                 script {
                     try {
-                        sh 'las -la'
+                        sh 'ls -la'
                     }catch (err) {
                         echo err.getMessage()
                     } 
