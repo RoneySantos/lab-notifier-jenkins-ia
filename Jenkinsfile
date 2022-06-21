@@ -40,6 +40,8 @@ pipeline {
 
                 try {
                     slackSend(channel: "notificacoes", message: "Teste @joseroneysilvasantos", sendAsText: true)
+                }catch(err) {
+                    echo err.getMessage()
                 }
 
                 def notifyBuild(String buildStatus = 'STARTED') {
