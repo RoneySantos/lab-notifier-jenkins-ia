@@ -32,7 +32,7 @@ pipeline {
             steps {
                 script {
                     try {
-                        currentBuild.result = "UNSTABLE"
+                        sh 'las -l'
                     }catch (err) {
                         echo err.getMessage()
                     } 
