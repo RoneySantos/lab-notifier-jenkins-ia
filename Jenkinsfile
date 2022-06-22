@@ -73,7 +73,7 @@ pipeline {
                     colorCode = '#FF0000'
                 }
 
-                slackSend (color: colorCode, message: summary)
+                slackSend (color: colorCode, message: summary, sendAsText:true)
             }
          }
     }
