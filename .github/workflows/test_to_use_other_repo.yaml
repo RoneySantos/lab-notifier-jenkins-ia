@@ -17,6 +17,7 @@ on:
 env:
   PR_NUMBER: "${{ github.event.number }}"
   PATH_REPO_DOCKER: "hub.docker.hpecorp.net/pivs/"
+  path_repos_hse-aurora/api-gateway: 'api-gateway/cmd/apigw/\nauthentication/cmd/accounts/'
 
 jobs:
   Using-envs:
@@ -27,3 +28,8 @@ jobs:
       
       - name: Teste usando repo atual
         run: echo ${PATH_REPO_DOCKER}${{github.repository}}
+      
+      - name: Teste usando env dentro de env
+        run: |
+        repos=path_repos_${{github.repository}}
+        echo $repos
