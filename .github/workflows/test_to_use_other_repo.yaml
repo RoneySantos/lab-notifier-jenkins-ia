@@ -32,5 +32,5 @@ jobs:
       
       - name: Teste usando env dentro de env
         run: |
-        repos=path_repos_${REPOS}
-        echo $repos
+        echo ${REPOS}
+
