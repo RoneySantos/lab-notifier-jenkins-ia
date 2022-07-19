@@ -1,6 +1,14 @@
 name: Docker Build and Send Image
 
 on:
+  workflow_call:
+      inputs:
+        extra_args:
+          description: extra command to run inside container
+          default: "echo 'there is no extra cmds to run'"
+          required: false
+          type: string  
+
   push:
     branches: [ "main" ]
   pull_request:
