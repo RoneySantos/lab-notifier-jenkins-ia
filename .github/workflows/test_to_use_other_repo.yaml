@@ -31,5 +31,5 @@ jobs:
       
       - name: Teste usando env dentro de env
         run: |
-        repos=path_repos_${{github.repository}}
+        repos=$(path_repos_${{github.repository}})
         echo $repos
