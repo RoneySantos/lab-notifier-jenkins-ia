@@ -1,6 +1,9 @@
 # repos=path_repos_${{github.repository}}
-test2=test3
-test3=deucerto
-repos=env.test2
+test2=test
+novos=novo
+test_novo=deucerto
+
+repos=$test2$novo
+# repos=$test2
 
 echo $repos
