@@ -31,7 +31,7 @@ jobs:
       - name: Teste env repo
         run: |
           repo = path_repos_$REPOS
-          echo $(path_repos_$REPOS)
+          echo $(path_repos_"$REPOS")
       
       # - name: Teste usando repo atual
       #   run: echo ${PATH_REPO_DOCKER}${{github.repository}}
