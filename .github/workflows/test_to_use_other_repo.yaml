@@ -1,0 +1,21 @@
+name: Docker Build and Send Image
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+env:
+  PR_NUMBER: "${{ github.event.number }}"
+  PATH_REPO_DOCKER: "hub.docker.hpecorp.net/pivs/"
+
+jobs:
+  Using-envs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      
+      - name: Teste usando repo atual
+        run: echo ${PATH_REPO_DOCKER}${{github.repository}}
