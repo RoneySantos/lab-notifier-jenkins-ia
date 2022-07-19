@@ -17,8 +17,8 @@ on:
 env:
   PR_NUMBER: "${{ github.event.number }}"
   PATH_REPO_DOCKER: "hub.docker.hpecorp.net/pivs/"
-  REPOS: "path_repos_${{ github.repository }}"
-  # path_repos_RoneySantos/lab-notifier-jenkins-ia: 'api-gateway/cmd/apigw/\nauthentication/cmd/accounts/'
+  REPOS: "${{ github.repository }}"
+  path_repos_RoneySantos/lab-notifier-jenkins-ia: 'api-gateway/cmd/apigw/\nauthentication/cmd/accounts/'
 
 
 jobs:
@@ -29,7 +29,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Teste env repo
-        run: $REPOS
+        run: echo path_repos_$REPOS
       
       # - name: Teste usando repo atual
       #   run: echo ${PATH_REPO_DOCKER}${{github.repository}}
