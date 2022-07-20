@@ -16,7 +16,7 @@ on:
 
 env:
   PR_NUMBER: "${{ github.event.number }}"
-  PATH_REPO_DOCKER: "hub.docker.hpecorp.net/pivs/"
+  # PATH_REPO_DOCKER: "hub.docker.hpecorp.net/pivs/"
   REPOS: "${{ github.repository }}"
   path_repos_RoneySantos/lab-notifier-jenkins-ia: 'api-gateway/cmd/apigw/\nauthentication/cmd/accounts/'
 
@@ -32,6 +32,7 @@ jobs:
         run: |
           repo = path_repos_$REPOS
           echo $(path_repos_"$REPOS")
+          echo $PATH_REPO_DOCKER2
       
       # - name: Teste usando repo atual
       #   run: echo ${PATH_REPO_DOCKER}${{github.repository}}
