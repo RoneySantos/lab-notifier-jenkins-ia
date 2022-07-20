@@ -30,7 +30,7 @@ jobs:
 
       - name: Teste env repo
         run: |
-          echo $PATH_REPO_DOCKER2
+          echo ${{ needs.spin_up.outputs.uniqueVMActionsTag }}
       
       # - name: Teste usando repo atual
       #   run: echo ${PATH_REPO_DOCKER}${{github.repository}}
