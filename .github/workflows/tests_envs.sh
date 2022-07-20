@@ -1,9 +1,12 @@
 # repos=path_repos_${{github.repository}}
 test2=test
-novos=novo
+test=novo
+temp_test=$(echo "$test2"_"$test")
+test=novo
 test_novo=deucerto
 
 repos=$test2$novo
 # repos=$test2
 
-echo $repos
+valor=$(echo $temp_test)
+echo $${valor}
