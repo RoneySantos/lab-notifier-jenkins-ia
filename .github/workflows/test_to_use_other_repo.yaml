@@ -30,8 +30,6 @@ jobs:
 
       - name: Teste env repo
         run: |
-          repo = path_repos_$REPOS
-          echo $(path_repos_"$REPOS")
           echo $PATH_REPO_DOCKER2
       
       # - name: Teste usando repo atual
