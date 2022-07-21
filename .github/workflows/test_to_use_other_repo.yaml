@@ -30,7 +30,7 @@ jobs:
 
       - name: Teste env repo
         run: |
-          echo test
+          echo $RONEY
       
       # - name: Teste usando repo atual
       #   run: echo ${PATH_REPO_DOCKER}${{github.repository}}
