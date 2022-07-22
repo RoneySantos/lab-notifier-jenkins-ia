@@ -31,6 +31,8 @@ jobs:
       - name: Teste env repo
         run: |
           echo ${{ inputs.image_repo }}
+      - name: Testando o test
+        run: echo $TESTANDO
       
       # - name: Teste usando repo atual
       #   run: echo ${PATH_REPO_DOCKER}${{github.repository}}
