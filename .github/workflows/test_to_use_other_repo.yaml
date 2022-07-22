@@ -34,7 +34,7 @@ jobs:
 
       - name: Testando o test
         run: |
-          ${{ inputs.path_repos_build }} && ${{ inputs.path_repos_build }}
+          ${{ inputs.path_repos_build }} && ${{ inputs.image_repo }}
           echo $IMAGE_REPO
           for i in $(echo -e $repos); do echo $i ; done
 
