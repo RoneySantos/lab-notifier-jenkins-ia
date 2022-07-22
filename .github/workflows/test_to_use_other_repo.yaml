@@ -17,7 +17,6 @@ on:
 env:
   PR_NUMBER: "${{ github.event.number }}"
   REPOS: "${{ github.repository }}"
-  path_repos_RoneySantos/lab-notifier-jenkins-ia: 'api-gateway/cmd/apigw/\nauthentication/cmd/accounts/'
   RONEY: ${{ inputs.image_repo }}
 
 jobs:
