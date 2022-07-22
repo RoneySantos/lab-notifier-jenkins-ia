@@ -3,7 +3,7 @@ name: Docker Build and Send Image
 on:
   workflow_call:
       inputs:
-        image_repo:
+        path_repos_build:
           description: test de uso do image_repo
           default: "echo 'there is no extra cmds to run'"
           required: false
