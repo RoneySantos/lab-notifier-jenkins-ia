@@ -28,6 +28,6 @@ jobs:
 
       - name: Testando o test
         run: |
-          ${{ inputs.image_repo }}
+          ${{ inputs.path_repos_build }}
           for i in $(echo -e $repos); do echo $i ; done
 
