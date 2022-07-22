@@ -2,12 +2,12 @@ name: Docker Build and Send Image
 
 on:
   workflow_call:
-      # inputs:
-      #   extra_args:
-      #     description: extra command to run inside container
-      #     default: "echo 'there is no extra cmds to run'"
-      #     required: false
-      #     type: string  
+      inputs:
+        image_repo:
+          description: test de uso do image_repo
+          default: "echo 'there is no extra cmds to run'"
+          required: false
+          type: string  
 
   push:
     branches: [ "main" ]
@@ -16,23 +16,11 @@ on:
 
 env:
   PR_NUMBER: "${{ github.event.number }}"
-  # PATH_REPO_DOCKER: "hub.docker.hpecorp.net/pivs/"
   REPOS: "${{ github.repository }}"
   path_repos_RoneySantos/lab-notifier-jenkins-ia: 'api-gateway/cmd/apigw/\nauthentication/cmd/accounts/'
   RONEY: ${{ inputs.image_repo }}
 
 jobs:
-
-  deploy:
-  # if: ${{ github.ref == 'refs/heads/master' }}
-  # needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Set Environment Variables
-        # uses: ./.github/actions/setvars
-        uses: RoneySantos/lab-notifier-jenkins-ia/.github/actions/setvars
-        with:
-          varFilePath: ./.github/variables/myvars.env
 
   Using-envs:
     runs-on: ubuntu-latest
@@ -40,17 +28,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Teste env repo
-        run: |
-          echo ${{ inputs.image_repo }}
       - name: Testando o test
-        run: echo $MYVAR2
+        run: |
+          ${{ inputs.image_repo }}
+          echo $repos
       
-      # - name: Teste usando repo atual
-      #   run: echo ${PATH_REPO_DOCKER}${{github.repository}}
-      
-      # - name: Teste usando env dentro de env
-      #   run: |
-      #     repos=$("path_repos_"$REPOS)
-      #     echo $repos
 
