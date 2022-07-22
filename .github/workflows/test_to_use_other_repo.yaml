@@ -29,8 +29,5 @@ jobs:
       - name: Testando o test
         run: |
           ${{ inputs.image_repo }}
-          echo -e $repos
-          echo -e $repos
-          echo -e $repos
-
+          for i in (echo -e $repos); do echo $i ; done
 
