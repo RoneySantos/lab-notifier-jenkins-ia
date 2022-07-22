@@ -43,5 +43,9 @@ jobs:
           ${{ inputs.path_repos_build }} && ${{ inputs.image_repo }} && ${{ inputs.create_folders_to_build }}
           echo $IMAGE_REPO
           for i in $(echo -e $repos); do echo $i ; done
+      - name: Novo test
+        run: |
+          echo $IMAGE_REPO
+          for i in $(echo -e $repos); do echo $i ; done
 
 
