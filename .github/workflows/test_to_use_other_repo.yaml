@@ -22,6 +22,17 @@ env:
   RONEY: ${{ inputs.image_repo }}
 
 jobs:
+
+  deploy:
+  # if: ${{ github.ref == 'refs/heads/master' }}
+  # needs: build
+  runs-on: ubuntu-latest
+  steps:
+    - name: Set Environment Variables
+      uses: ./.github/actions/setvars
+      with:
+        varFilePath: ./.github/variables/myvars.env
+
   Using-envs:
     runs-on: ubuntu-latest
     steps:
@@ -32,7 +43,7 @@ jobs:
         run: |
           echo ${{ inputs.image_repo }}
       - name: Testando o test
-        run: echo $TESTANDO
+        run: echo $MYVAR2
       
       # - name: Teste usando repo atual
       #   run: echo ${PATH_REPO_DOCKER}${{github.repository}}
