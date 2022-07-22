@@ -30,5 +30,7 @@ jobs:
         run: |
           ${{ inputs.image_repo }}
           echo -e $repos
+          echo -e $repos
+          echo -e $repos
 
 
