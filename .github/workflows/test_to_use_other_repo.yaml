@@ -49,6 +49,6 @@ jobs:
           for i in $(echo -e $repos); do echo $i ; done
       - name: Teste usando variavel
         run: |
-          echo "${{ env.RONEY }}"
+          echo "${{ env.TESTANDO }}"
 
 
