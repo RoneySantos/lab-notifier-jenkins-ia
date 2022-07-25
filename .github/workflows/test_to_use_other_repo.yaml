@@ -47,5 +47,8 @@ jobs:
         run: |
           echo $IMAGE_REPO
           for i in $(echo -e $repos); do echo $i ; done
+      - name: Teste usando variavel
+        run: |
+          echo "${{ env.roney_test }}"
 
 
