@@ -1,4 +1,4 @@
-name: Docker Build and Send Image
+name: Testando variaveis
 
 on:
   workflow_call:
